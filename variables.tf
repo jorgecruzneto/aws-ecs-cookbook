@@ -21,9 +21,14 @@ variable "az_count" {
   default     = "2"
 }
 
-variable "app_image" {
+variable "private_image" {
   description = "Docker image to run in the ECS cluster"
-  default     = "nginx:stable-alpine"
+  default     = "jcruzn/private-api:1.4"
+}
+
+variable "public_image" {
+  description = "Docker image to run in the ECS cluster"
+  default     = "jcruzn/public-api:1.1"
 }
 
 variable "app_port" {
@@ -33,7 +38,7 @@ variable "app_port" {
 
 variable "app_count" {
   description = "Number of docker containers to run"
-  default     = 3
+  default     = 2
 }
 
 variable "health_check_path" {
